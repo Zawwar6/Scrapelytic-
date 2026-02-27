@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapelytic - Find Leads, Track Competitors, Grow Faster</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+      html{
+        scroll-behavior: smooth;
+      }
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #fbbf24, #f59e0b) border-box;
+            border: 2px solid transparent;
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header/Navigation -->
+   <header class="bg-[#F5F5F5] py-5 px-6 md:px-12 lg:px-20">
+  <nav class="flex items-center justify-between mx-auto max-w-[1728px] w-full relative">
+
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="Images/Frame 2147228543 1.png" alt="Scrapelytic Logo" class="h-10 md:h-12">
+    </div>
+
+    <!-- Navigation Links (desktop) -->
+    <ul class="hidden md:flex items-center space-x-10 text-[16px] md:text-[20px] font-light">
+      <li><a href="#services" class="hover:text-amber-600 font-normal transition">Services</a></li>
+      <li><a href="#process" class="hover:text-amber-600 font-normal transition">Process</a></li>
+      <li><a href="#testimonials" class="hover:text-amber-600 font-normal transition">Testimonials</a></li>
+      <li><a href="#blogs" class="hover:text-amber-600 font-normal transition">Blogs</a></li>
+      <li><a href="#about" class="hover:text-amber-600 font-normal transition">About us</a></li>
+    </ul>
+
+    <!-- Get Sample Data Button -->
+    <button class="hidden md:flex hover:bg-gray-50 transition px-5 py-2 rounded-full text-[15px] md:text-[16px] font-light flex items-center gap-3 border border-black shadow-sm">
+      <span>Get Sample Data</span>
+      <div class="w-10 h-10 bg-[#FFC66E] rounded-full flex items-center justify-center">
+        <img src="Images/arrow-dark.png" alt="Arrow" class="w-5 h-5">
+      </div>
+    </button>
+
+    <!-- Mobile Hamburger Menu -->
+    <div class="md:hidden flex items-center">
+      <button id="mobile-menu-button" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300">
+        <!-- Hamburger icon -->
+        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+  </nav>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden mt-2">
+    <ul class="flex flex-col gap-4 text-[16px] font-light">
+      <li><a href="#services" class="hover:text-amber-600 transition">Services</a></li>
+      <li><a href="#process" class="hover:text-amber-600 transition">Process</a></li>
+      <li><a href="#testimonials" class="hover:text-amber-600 transition">Testimonials</a></li>
+      <li><a href="#blogs" class="hover:text-amber-600 transition">Blogs</a></li>
+      <li><a href="#about" class="hover:text-amber-600 transition">About us</a></li>
+      <li>
+        <button class="w-full hover:bg-gray-50 transition px-5 py-2 rounded-full text-[15px] font-light flex items-center justify-center gap-3 border border-black shadow-sm mt-2">
+          <span>Get Sample Data</span>
+          <div class="w-10 h-10 bg-[#FFC66E] rounded-full flex items-center justify-center">
+            <img src="Images/arrow-dark.png" alt="Arrow" class="w-5 h-5">
+          </div>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+</header>
+
+    <!-- Hero Section -->
+  <section class="bg-[#F5F5F5] py-16 md:py-24 px-6 md:px-12 lg:px-20 relative overflow-hidden">
+
+    <!-- Background Ellipses -->
+    <img src="Images/Ellipse 1.png" alt=""
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+        w-64 h-64 sm:w-80 sm:h-80 md:w-[500px] md:h-[500px] 
+        opacity-40 pointer-events-none">
+
+    <img src="Images/Ellipse 2.png" alt=""
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+        w-72 h-72 sm:w-96 sm:h-96 md:w-[600px] md:h-[600px] 
+        opacity-30 pointer-events-none">
+
+    <div class="mx-auto text-center relative z-10 max-w-[1728px] w-full">
+
+        <!-- Heading -->
+        <h1 class="text-[#111111] 
+            text-3xl sm:text-4xl md:text-[60px] lg:text-[80px] 
+            font-semibold 
+            leading-tight md:leading-[80px] lg:leading-[100px] 
+            mb-6 md:mb-8 tracking-tight">
+            FIND LEADS. TRACK<br class="hidden md:block">
+            COMPETITORS. GROW FASTER
+        </h1>
+
+        <!-- Paragraph -->
+        <p class="text-[#545554] 
+            text-[16px] sm:text-[18px] md:text-[20px] 
+            font-normal leading-relaxed 
+            mb-10 md:mb-12 
+            max-w-3xl md:max-w-4xl mx-auto">
+            Businesses lose time and opportunities chasing leads and tracking competitors.
+            We automatically scrape, clean, and organize web data so you can focus on decisions—not data entry.
+        </p>
+
+        <!-- Buttons + Trust Section -->
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+
+            <!-- Button -->
+            <button
+                class="hover:bg-gray-50 transition 
+                pl-5 pr-1 py-1 
+                rounded-full text-[15px] md:text-[16px] 
+                font-light flex items-center gap-6 
+                border border-black shadow-sm">
+
+                <span class="font-normal">Book A Demo</span>
+
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-[#FFC66E] rounded-full flex items-center justify-center">
+                    <img src="Images/arrow-dark.png" alt="Arrow" class="w-4 h-4 md:w-5 md:h-5">
+                </div>
+            </button>
+
+            <!-- Trust Section -->
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+
+                <!-- Avatars -->
+                <div class="flex -space-x-3">
+                    <img src="Images/trust-client1.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover">
+                    <img src="Images/trust-client2.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover">
+                    <img src="Images/trust-client3.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover">
+                    <img src="Images/trust-client4.jpg" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover">
+                </div>
+
+                <!-- Rating -->
+                <div class="text-center sm:text-left">
+                    <div class="flex items-center justify-center sm:justify-start gap-1 mb-1">
+                        <!-- 5 stars same as yours -->
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-[#FFC107]">
+                            <path d="M8 1L10.163 5.403L15 6.128L11.5 9.547L12.326 14.372L8 12.103L3.674 14.372L4.5 9.547L1 6.128L5.837 5.403L8 1Z"/>
+                        </svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-[#FFC107]">
+                            <path d="M8 1L10.163 5.403L15 6.128L11.5 9.547L12.326 14.372L8 12.103L3.674 14.372L4.5 9.547L1 6.128L5.837 5.403L8 1Z"/>
+                        </svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-[#FFC107]">
+                            <path d="M8 1L10.163 5.403L15 6.128L11.5 9.547L12.326 14.372L8 12.103L3.674 14.372L4.5 9.547L1 6.128L5.837 5.403L8 1Z"/>
+                        </svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-[#FFC107]">
+                            <path d="M8 1L10.163 5.403L15 6.128L11.5 9.547L12.326 14.372L8 12.103L3.674 14.372L4.5 9.547L1 6.128L5.837 5.403L8 1Z"/>
+                        </svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="text-[#FFC107] opacity-30">
+                            <path d="M8 1L10.163 5.403L15 6.128L11.5 9.547L12.326 14.372L8 12.103L3.674 14.372L4.5 9.547L1 6.128L5.837 5.403L8 1Z"/>
+                        </svg>
+                    </div>
+                    <p class="text-[14px] md:text-[15px] font-medium">
+                        Trusted by 500+ clients
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- Problem Statement Section -->
+   <section class="bg-[#F5F5F5] py-20 px-6 md:px-12 lg:px-20">
+  <div class="w-full max-w-[1728px] mx-auto">
+
+    <!-- Heading -->
+    <div class="mb-12 text-center md:text-left">
+      <span
+        class="inline-block bg-[#E6BA7E] text-black text-[16px] md:text-[18px] font-normal px-4 py-2 rounded-lg mb-4 md:mb-6">
+        CHALLENGES & PROBLEMS
+      </span>
+      <h2 class="text-3xl md:text-5xl font-[500] leading-tight">
+        SCRAPING DATA IS BREAKING<br>
+        YOUR TEAM'S PRODUCTIVITY
+      </h2>
+    </div>
+
+    <div class="relative">
+
+      <!-- Top Text Descriptions -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mb-8 max-w-6xl mx-auto">
+        <!-- Top Left -->
+        <div class="text-center md:text-left md:pr-8">
+          <p class="text-[15px] md:text-[16px] text-gray-600 leading-relaxed mb-2 md:mb-3">
+            Raw scraped data often arrives unstructured, incomplete, or full of errors—requiring extra time to clean and fix.
+          </p>
+          <h3 class="font-bold text-[16px] md:text-[17px] text-black">Messy and Inconsistent Data</h3>
+        </div>
+
+        <!-- Top Right -->
+        <div class="text-center md:text-left md:pl-8">
+          <p class="text-[15px] md:text-[16px] text-gray-600 leading-relaxed mb-2 md:mb-3">
+            Websites change frequently and enforce anti-bot measures, causing DIY scrapers to fail without warning.
+          </p>
+          <h3 class="font-bold text-[16px] md:text-[17px] text-black">Scrapers Getting Blocked or Breaking</h3>
+        </div>
+      </div>
+
+      <!-- Icons Image -->
+      <div class="flex justify-center my-8">
+        <img src="Images/Group 11.png" alt="Challenges Icons" class="w-full max-w-6xl h-auto">
+      </div>
+
+      <!-- Bottom Text Descriptions -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 max-w-6xl mx-auto">
+        <!-- Bottom Left -->
+        <div class="text-center md:text-left md:pr-8">
+          <h3 class="font-bold text-[16px] md:text-[17px] text-black mb-2 md:mb-3">Time-Consuming Manual Work</h3>
+          <p class="text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
+            Teams and freelancers spend hours copying and organizing data by hand, slowing down projects and reducing productivity.
+          </p>
+        </div>
+
+        <!-- Bottom Right -->
+        <div class="text-center md:text-left md:pl-8">
+          <h3 class="font-bold text-[16px] md:text-[17px] text-black mb-2 md:mb-3">Lack of Technical Expertise</h3>
+          <p class="text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
+            Building and maintaining reliable scrapers requires technical skills many teams and freelancers don't have or can't afford.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="bg-[#FFE7C2] py-20 px-6 md:px-12 lg:px-20">
+        <div class="w-[1728px] max-w-[100%] mx-auto">
+            <!-- Header Section -->
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8">
+                <!-- Left Side - Title -->
+                <div class="max-w-2xl">
+                    <div class="bg-black text-[#E6BA7E] w-[230px] h-[44px] px-6 py-3 rounded-xl inline-block mb-6">
+                        <span class="text-[18px] font-light tracking-wide">SERVICES WE OFFER</span>
+                    </div>
+
+                    <h2 class="text-2xl lg:text-[40px] font-[500] leading-tight leading-[56px]">
+                        OUR EXPERT SERVICES TO DRIVE<br>
+                        GROWTH
+                    </h2>
+                </div>
+
+                <!-- Right Side - Description & CTA -->
+                <div class="max-w-md lg:text-left">
+                    <p class="text-[#545554] text-[15px] leading-relaxed mb-6">
+                        Everything you need to collect, clean, and monitor web data—without manual effort, technical
+                        complexity, or unreliable results.
+                    </p>
+                    <button
+                        class="hover:bg-gray-50 transition pl-5 px-1 py-1 rounded-full text-[15px] font-light flex items-center gap-8 border border-black shadow-sm ">
+                        <span class="font-normal">Book A Demo</span>
+                        <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                            <img src="Images/arrow.svg" alt="Arrow" class="w-5 h-5">
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Service Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1: Lead Data Extraction -->
+                <div
+                    class="service-card rounded-[32px] overflow-hidden relative h-[450px] group cursor-pointer shadow-lg">
+                    <img src="Images/a5e888b1ab78819801f0d06ff1cf43ffd196ee81.png" alt="Lead Data Extraction"
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-3">
+                        <h3 class="text-white text-[22px] font-light leading-snug max-w-[180px]">Lead Data Extraction
+                        </h3>
+                        <div
+                            class="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 shadow-xl">
+                            <img src="Images/arrow.svg" alt="Arrow" class="w-6 h-6">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 2: Product & Price Monitoring -->
+                <div
+                    class="service-card rounded-[32px] overflow-hidden relative h-[450px] group cursor-pointer shadow-lg">
+                    <img src="Images/cb70730e31e6d88ef3af4351304397c781bcdfdc.png" alt="Product & Price Monitoring"
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-3">
+                        <h3 class="text-white text-[22px] font-light leading-snug max-w-[180px]">Product & Price
+                            Monitoring</h3>
+                        <div
+                            class="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 shadow-xl">
+                            <img src="Images/arrow.svg" alt="Arrow" class="w-6 h-6">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3: Custom Web Scraping -->
+                <div
+                    class="service-card rounded-[32px] overflow-hidden relative h-[450px] group cursor-pointer shadow-lg">
+                    <img src="Images/1c24cd4b91dc5799af994c93a2fe8e2239529a3e.png" alt="Custom Web Scraping"
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-3">
+                        <h3 class="text-white text-[22px] font-light leading-snug max-w-[180px]">Custom Web Scraping
+                        </h3>
+                        <div
+                            class="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 shadow-xl">
+                            <img src="Images/arrow.svg" alt="Arrow" class="w-6 h-6">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 4: Data Cleaning & Structuring -->
+                <div
+                    class="service-card rounded-[32px] overflow-hidden relative h-[450px] group cursor-pointer shadow-lg">
+                    <img src="Images/08f37395e6216965b25d8dfb1a624ae2415b2ec7.png" alt="Data Cleaning & Structuring"
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-3">
+                        <h3 class="text-white text-[22px] font-light leading-snug max-w-[180px]">Data Cleaning &
+                            Structuring</h3>
+                        <div
+                            class="w-14 h-14 bg-black rounded-full flex items-center justify-center flex-shrink-0 shadow-xl">
+                            <img src="Images/arrow.svg" alt="Arrow" class="w-6 h-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="bg-white py-20 px-6 md:px-12 lg:px-20">
+  <div class="w-full max-w-[1728px] mx-auto">
+    
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-8">
+      <div>
+        <span
+          class="inline-block bg-[#E6BA7E] text-center text-[18px] w-[230px] h-[44px] text-black font-normal px-5 py-2 rounded-lg mb-6">
+          HOW IT WORKS
+        </span>
+        <h2 class="text-4xl md:text-[40px] font-medium leading-[56px]">
+          YOUR BUSINESS NEEDS DATA. YOUR<br>
+          TEAM IS STUCK COLLECTING IT.
+        </h2>
+      </div>
+      <button
+        class="hover:bg-gray-50 transition px-5 py-2 rounded-full text-[16px] font-light flex items-center gap-3 border border-black shadow-sm">
+        <span class="font-normal">Get Started</span>
+        <div class="w-8 h-8 bg-[#F4CA8C] rounded-full flex items-center justify-center">
+          <img src="Images/arrow-dark.png" alt="Arrow" class="w-5 h-5">
+        </div>
+      </button>
+    </div>
+
+    <!-- Process Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Step 01 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 pt-14 hover:shadow-lg transition h-[420px] flex flex-col relative">
+        <div class="absolute top-4 left-4 w-14 h-14 bg-[#FFE7C2] rounded-full flex items-center justify-center font-semibold text-base z-10">
+          01
+        </div>
+        <div class="flex-1">
+          <img src="Images/Frame 2147228579.png" alt="What do you need" class="w-full h-auto">
+        </div>
+        <div class="mt-auto">
+          <h4 class="font-medium text-[20px] mb-2">Share Your Requirements</h4>
+          <p class="text-[14px] font-light text-gray-600">
+            Tell us which websites you want to scrape, what data you need, and how often you want it delivered.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 pt-14 hover:shadow-lg transition h-[420px] flex flex-col relative">
+        <div class="absolute top-4 left-4 w-14 h-14 bg-[#FFE7C2] rounded-full flex items-center justify-center font-semibold text-base z-10">
+          02
+        </div>
+        <div class="flex-1">
+          <img src="Images/Frame 2147228579 (1).png" alt="Configure extraction" class="w-full h-auto">
+        </div>
+        <div class="mt-auto">
+          <h4 class="font-medium text-[20px] mb-2">We Configure the Extraction</h4>
+          <p class="text-[14px] font-light text-gray-600">
+            Our team sets up a reliable, block-resistant scraping process tailored to your exact use case.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 pt-14 hover:shadow-lg transition h-[420px] flex flex-col relative">
+        <div class="absolute top-4 left-4 w-14 h-14 bg-[#FFE7C2] rounded-full flex items-center justify-center font-semibold text-base z-10">
+          03
+        </div>
+        <div class="flex-1">
+          <img src="Images/Frame 2147228579 (2).png" alt="Extracted Data" class="w-full h-auto">
+        </div>
+        <div class="mt-auto">
+          <h4 class="font-medium text-[20px] mb-2">Data Is Collected & Cleaned</h4>
+          <p class="text-[14px] font-light text-gray-600">
+            We extract the data, remove inconsistencies, and structure it into clean, usable formats.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 pt-14 hover:shadow-lg transition h-[420px] flex flex-col relative">
+        <div class="absolute top-4 left-4 w-14 h-14 bg-[#FFE7C2] rounded-full flex items-center justify-center font-semibold text-base z-10">
+          04
+        </div>
+        <div class="flex-1">
+          <img src="Images/Frame 2147228579 (3).png" alt="Access Data" class="w-full h-auto">
+        </div>
+        <div class="mt-auto">
+          <h4 class="font-medium text-[20px] mb-2">Receive Your Data</h4>
+          <p class="text-[14px] font-light text-gray-600">
+            Get accurate, up-to-date data delivered via file or API—ready for analysis, sales, or reporting.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-[#FFE7C2] py-20 px-6 md:px-12 lg:px-20">
+        <div class="w-[1728px] max-w-[100%] mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <span
+                    class="color-[#FFC66E] inline-block bg-black text-white text-[18px] w-[230px] h-[44px] text-center font-light px-6 py-2 rounded-xl mb-6">TESTIMONIALS</span>
+                <h2 class="text-4xl md:text-[40px] font-medium leading-[56px] mb-12">
+                    TRUSTED BY HIGH- GROWTH FREELANCER<br>
+                    AND STARTUPS ACROSS THE WORLD
+                </h2>
+            </div>
+
+            <!-- Stats with Dividers -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-16">
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-normal mb-2">5+</div>
+                    <div class="text-base font-bold">Proven Experience</div>
+                </div>
+                <div class="hidden md:block w-px h-20 bg-[#545554]"></div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-normal mb-2">500+</div>
+                    <div class="text-base font-bold">Satisfied Clients</div>
+                </div>
+                <div class="hidden md:block w-px h-20 bg-[#545554]"></div>
+                <div class="text-center">
+                    <div class="text-5xl md:text-6xl font-normal mb-2">100%</div>
+                    <div class="text-base font-bold">Data Accuracy</div>
+                </div>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Top Row - Text Testimonials -->
+                <!-- Testimonial 1 -->
+                <div class="bg-[#F2DBB8] rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4">"Scrapelytic stood out for its reliability and support. We finally have
+                            a solution we can trust at scale."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                            alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-sm">Judi Kim</div>
+                            <div class="text-xs text-gray-600">Analytics Lead, XYZ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-[#F2DBB8] rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4">"Scrapelytic stood out for its reliability and support. We finally have
+                            a solution we can trust at scale."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                            alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-sm">Judi Kim</div>
+                            <div class="text-xs text-gray-600">Analytics Lead, XYZ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-[#F2DBB8] rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                         <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4">"Scrapelytic stood out for its reliability and support. We finally have
+                            a solution we can trust at scale."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                            alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-sm">Judi Kim</div>
+                            <div class="text-xs text-gray-600">Analytics Lead, XYZ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle Row - Photo Testimonials -->
+                <!-- Photo Testimonial 1 -->
+                <div class="rounded-3xl overflow-hidden shadow-lg relative h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=700&fit=crop"
+                        alt="Client" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-[#F5E6CC] p-6">
+                        <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4">"Scrapelytic stood out for its reliability and support. We finally have
+                            a solution we can trust at scale."</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                                alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <div class="font-semibold text-sm">Judi Kim</div>
+                                <div class="text-xs text-gray-600">Analytics Lead, XYZ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Testimonial 2 -->
+                <div class="rounded-3xl overflow-hidden shadow-lg relative h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=700&fit=crop"
+                        alt="Client" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                         <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4 text-white">"Scrapelytic stood out for its reliability and support. We
+                            finally have a solution we can trust at scale."</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                                alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <div class="font-semibold text-sm text-white">Judi Kim</div>
+                                <div class="text-xs text-gray-300">Analytics Lead, XYZ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Testimonial 3 -->
+                <div class="rounded-3xl overflow-hidden shadow-lg relative h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=700&fit=crop"
+                        alt="Client" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-[#F5E6CC] p-6">
+                         <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4">"Scrapelytic stood out for its reliability and support. We finally have
+                            a solution we can trust at scale."</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                                alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                            <div>
+                                <div class="font-semibold text-sm">Judi Kim</div>
+                                <div class="text-xs text-gray-600">Analytics Lead, XYZ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row - Text Testimonials -->
+                <!-- Testimonial 7 -->
+                <div class="bg-[#F2DBB8] rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                         <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4">"Scrapelytic stood out for its reliability and support. We finally have
+                            a solution we can trust at scale."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
+                            alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-sm">Judi Kim</div>
+                            <div class="text-xs text-gray-600">Analytics Lead, XYZ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 8 -->
+                <div class="bg-[#F2DBB8] rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                         <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4">"Scrapelytic stood out for its reliability and support. We finally have
+                            a solution we can trust at scale."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+                            alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-sm">Judi Kim</div>
+                            <div class="text-xs text-gray-600">Analytics Lead, XYZ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 9 -->
+                <div class="bg-[#F2DBB8] rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                         <div class="flex gap-1 mb-3">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 2 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 3 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Full Star 4 -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20" fill="#F59E0B">
+                        <path d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+
+                    <!-- Half Star -->
+                    <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 20 20">
+                        <defs>
+                        <linearGradient id="halfStarGrad">
+                            <stop offset="50%" stop-color="#F59E0B"/>
+                            <stop offset="50%" stop-color="#D1D5DB"/>
+                        </linearGradient>
+                        </defs>
+                        <path fill="url(#halfStarGrad)" d="M10 1l2.39 4.85 5.35.78-3.87 3.77.92 5.36L10 13.77l-4.79 2.52.92-5.36-3.87-3.77 5.35-.78L10 1z"/>
+                    </svg>
+                        </div>
+                        <p class="text-sm mb-4">"Scrapelytic stood out for its reliability and support. We finally have
+                            a solution we can trust at scale."</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                            alt="Judi Kim" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <div class="font-semibold text-sm">Judi Kim</div>
+                            <div class="text-xs text-gray-600">Analytics Lead, XYZ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Scrapelytic Section -->
+    <section class="bg-white py-20 px-6 md:px-12 lg:px-20">
+        <div class="w-[1728px] max-w-[100%] mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <span class="inline-block bg-[#FFC66E] text-black text-[18px] font-light px-6 py-2 rounded-xl mb-6">WHY
+                    CHOOSE SCRAPELYTIC</span>
+                <h2 class="text-[40px] md:text-[40px] font-medium leading-[56px]">
+                    RELIABLE WEB DATA. DELIVERED THE<br>
+                    RIGHT WAY.
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+                <!-- Green Card - Top Left -->
+                <div class="bg-gradient-to-br from-[#C8E6A0] to-[#B8DC88] rounded-3xl p-4 flex flex-col justify-between lg:row-span-1"
+                    style="min-height: 200px;">
+                    <div class="mb-4 flex justify-end">
+                        <img src="Images/Favicon.png" alt="Icon" class="w-[150px] h-[150px] rounded-xl">
+                    </div>
+                    <h3 class="text-[30px] font-medium leading-[48px]">From Any <br> Website to Clean, Usable Data</h3>
+                </div>
+
+                <!-- Large Photo Card - GROWTH (Middle - spans 2 cols x 2 rows) -->
+                <div class="rounded-3xl overflow-hidden relative lg:col-span-1 lg:row-span-2"
+                    style="min-height: 450px;">
+                    <img src="Images/af0e0870c3b37f5216fa5c27a49b382aefd5ba01.png" alt="Growth"
+                        class="w-full h-full object-cover">
+                    <div class="absolute top-8 left-8">
+                        <h3 class="text-[50px] font-bold leading-[60px] italic">GROWTH</h3>
+                    </div>
+                </div>
+
+                <!-- Orange Card - 10X (Top Right) -->
+                <div class="bg-gradient-to-br from-[#FFC66E] to-[#FFB84D] rounded-3xl p-4 flex flex-col justify-end lg:row-span-1"
+                    style="min-height: 300px;">
+                    <div class="text-[72px] font-medium leading-[90px] mb-4">10X</div>
+                    <p class="text-[16px] font-light leading-[24px]">Faster Data Collection In Minutes automated,
+                        reliable, and always ready.</p>
+                </div>
+
+                <!-- Team Photo Card (Bottom Right) -->
+                <div class="rounded-3xl overflow-hidden lg:row-span-1" style="min-height: 300px;">
+                    <img src="Images/547a8751c7b839a69651bd53d43475b9b62fc94b.png" alt="Team"
+                        class="w-[100%] h-[300px] object-cover">
+                </div>
+
+                <!-- Light Gray Card - 99.9% (Bottom Left) -->
+                <div class="bg-gradient-to-br from-[#EDE8E3] to-[#E5DFD8] rounded-3xl p-4 flex flex-col justify-end lg:row-span-1"
+                    style="min-height: 300px;">
+                    <div class="text-[72px] font-medium leading-[90px] mb-4">99.9%</div>
+                    <p class="text-[16px] font-normal leading-[24px]">Successful Scraping Runs</p>
+                </div>
+
+                <!-- Light Blue Card - Turn Web Data (Bottom - spans 2 cols) -->
+                <div class="bg-gradient-to-br from-[#B8E6E6] to-[#A0D8D8] rounded-3xl p-0 flex flex-col justify-start lg:col-span-2 lg:col-span-2"
+                    style="min-height: 300px;">
+                    <img src="Images/Frame 2147228564.png" alt="Team" class="w-full h-full object-contain">
+                    <!-- <h3 class="text-[40px] font-medium leading-[50px]">Turn Web Data Into Business Decisions</h3> -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-white py-20 px-6 md:px-12 lg:px-20">
+        <div class="w-[1728px] max-w-[100%] mx-auto">
+            <!-- Header -->
+            <div class="mb-12">
+                <span
+                    class="inline-block bg-[#FFC66E] text-black text-[18px] w-[230px] h-[44px] text-center font-light px-6 py-2 rounded-xl mb-6">FAQS</span>
+                <h2 class="text-[40px] md:text-[40px] font-medium leading-[56px]">
+                    EVERYTHING YOU NEED TO KNOW
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-[#F5F5F5] rounded-2xl p-4 cursor-pointer transition" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-medium text-[20px] leading-[46px] pr-4">Can I scrape data from any website?</h3>
+                        <div class="faq-icon flex-shrink-0">
+                            <svg class="plus-icon w-8 h-8" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="16" y1="8" x2="16" y2="24" stroke="black" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <line x1="8" y1="16" x2="24" y2="16" stroke="black" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <div
+                                class="close-icon hidden w-10 h-10 bg-[#FFC66E] rounded-full flex items-center justify-center">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="4" y1="4" x2="12" y2="12" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <line x1="12" y1="4" x2="4" y2="12" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[16px] leading-[32px] text-gray-600 text-base">Yes, we can scrape data from most
+                            websites. However, we ensure all scraping is done ethically and in compliance with website
+                            terms of service and legal regulations.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-[#F5F5F5] rounded-2xl p-4 cursor-pointer transition" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-medium text-[20px] leading-[46px] pr-4">Will the data be clean and ready to use?
+                        </h3>
+                        <div class="faq-icon flex-shrink-0">
+                            <svg class="plus-icon w-8 h-8" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="16" y1="8" x2="16" y2="24" stroke="black" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <line x1="8" y1="16" x2="24" y2="16" stroke="black" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <div
+                                class="close-icon hidden w-10 h-10 bg-[#FFC66E] rounded-full flex items-center justify-center">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="4" y1="4" x2="12" y2="12" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <line x1="12" y1="4" x2="4" y2="12" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[16px] leading-[32px] text-gray-600 text-base">Absolutely! We clean, validate,
+                            and structure all data before delivery. You'll receive organized, ready-to-use data in your
+                            preferred format (CSV, JSON, API, etc.).</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 - Expanded by default -->
+                <div class="faq-item active bg-[#F5F5F5] rounded-2xl p-4 cursor-pointer transition"
+                    onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between">
+                        <h3 class="font-medium text-[20px] leading-[46px] pr-4">Do I need technical skills to use this
+                            tool?</h3>
+                        <div class="faq-icon flex-shrink-0">
+                            <svg class="plus-icon hidden w-8 h-8" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="16" y1="8" x2="16" y2="24" stroke="black" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <line x1="8" y1="16" x2="24" y2="16" stroke="black" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <div
+                                class="close-icon w-10 h-10 bg-[#FFC66E] rounded-full flex items-center justify-center">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="4" y1="4" x2="12" y2="12" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <line x1="12" y1="4" x2="4" y2="12" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-[16px] leading-[32px] text-gray-600 text-base">Not at all. The platform is built
+                            for non-technical users, with an intuitive interface that lets you collect web data without
+                            writing a single line of code.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="bg-white py-12 px-6 md:px-12 lg:px-20">
+        <div class=" mx-auto">
+            <div
+                class="bg-black rounded-[140px] px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Left Side - Profile & Text -->
+                <div class="flex items-center gap-6">
+                    <img src="Images/abdb8e41695e7948ae9004959a0e2e65c334f7a0.jpg" alt="Faraz"
+                        class="w-20 h-20 rounded-full object-cover flex-shrink-0">
+                    <div class="text-white">
+                        <p class="text-lg md:text-xl font-medium">
+                            <span class="font-semibold text-[24px] leading-[40px]">Hey, I am Faraz from
+                                Scrapelytic.</span>
+                            <span class="text-gray-400 font-medium text-[22px] leading-[40px]"> Stop wasting hours and
+                                Get Clean, Actionable Web Data Without the Hassle</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Side - CTA Button -->
+                <button
+                    class="bg-transparent border-[1px] border-white hover:bg-white hover:text-black transition pl-4 pr-2 py-2 rounded-full text-white text-base font-light flex items-center gap-8 flex-shrink-0">
+                    <span>Get In Touch</span>
+                    <div class="w-12 h-12 bg-[#FFC66E] rounded-full flex items-center justify-center">
+                        <img src="Images/arrow-dark.png" alt="Arrow" class="w-5 h-5">
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#FFE7C2] py-16 px-6 md:px-12 lg:px-20">
+        <div class=" mx-auto">
+            <!-- Logo -->
+            <img src="Images/Frame 2147228543 1.png" alt="Scrapelytic Logo" class="h-10 mb-8">
+
+            <!-- Top Border Line -->
+            <div class="border-t border-black/10 mb-12"></div>
+
+            <!-- Footer Content Grid -->
+            <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+                <!-- Left Side - Company Info -->
+                <div class="max-w-md">
+                    <!-- Tagline -->
+                    <h3 class="text-[32px] leading-[48px] font-medium text-black mb-8">
+                        Your Data Is Scattered.<br>
+                        We Collect It for You.
+                    </h3>
+
+                    <!-- Email -->
+                    <a href="mailto:Hello@scrapelytic.com" class="text-[16px] font-normal text-black hover:underline">
+                        Hello@scrapelytic.com
+                    </a>
+                </div>
+
+                <!-- Right Side - Menus -->
+                <div class="flex gap-16 md:gap-24">
+                    <!-- Pages Column -->
+                    <div>
+                        <h4 class="text-[20px] font-semibold text-black mb-6">Pages</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">Home</a>
+                            </li>
+                            <li><a href="#services"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">Services</a>
+                            </li>
+                            <li><a href="#how-it-works"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">How it
+                                    works</a></li>
+                            <li><a href="#testimonials"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">Testimonials</a>
+                            </li>
+                            <li><a href="#why-choose-us"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">Why
+                                    Choose Us</a></li>
+                            <li><a href="#contact"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">Contact
+                                    Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Socials Column -->
+                    <div>
+                        <h4 class="text-[20px] font-semibold text-black mb-6">Socials</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">Instagram</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">Linkedln</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">twitter /
+                                    X</a></li>
+                            <li><a href="#"
+                                    class="text-[16px] font-normal text-black hover:text-amber-700 transition">Facebook</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row items-center justify-between text-[16px] text-black">
+                <div class="flex items-center gap-4 mb-4 md:mb-0">
+                    <a href="#" class="hover:text-amber-700 transition">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-amber-700 transition">Term & Conditions</a>
+                </div>
+                <p>2025 Scrapelytic - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+         const btn = document.getElementById('mobile-menu-button');
+         const menu = document.getElementById('mobile-menu');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                // Show plus icon, hide close icon
+                const plusIcon = item.querySelector('.plus-icon');
+                const closeIcon = item.querySelector('.close-icon');
+                if (plusIcon) plusIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
+            });
+
+            // Toggle current FAQ item
+            if (!isActive) {
+                element.classList.add('active');
+                // Hide plus icon, show close icon
+                const plusIcon = element.querySelector('.plus-icon');
+                const closeIcon = element.querySelector('.close-icon');
+                if (plusIcon) plusIcon.classList.add('hidden');
+                if (closeIcon) closeIcon.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>
